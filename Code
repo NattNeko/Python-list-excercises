@@ -1,0 +1,55 @@
+list = [2, 27, 40, 6, 44, 13]
+menu_options = {
+    1: 'Wybierz losowo z listy',
+    2: 'Dodaj do listy',
+    3: 'Posortuj',
+    4: 'Usuń z listy',
+    5: 'Opuść program',
+    6: 'Pokaż listę',
+}
+
+def print_menu():
+    for key in menu_options.keys():
+        print (key, '-', menu_options[key] )
+
+def option1():
+     import random
+     print(random.choice(list))
+1
+def option2():
+        a, i = eval(input("Podaj liczbę i indeks (oddziel je przecinkiem): "))
+        list.insert(i, a)
+        print(list)
+def option3():
+
+        list.sort()
+        print(list)
+def option4():
+        e = int(input("Którą liczbę usunąć? "))
+        list.remove(e)
+        print(list)
+
+
+if __name__=='__main__':
+    while(True):
+        print_menu()
+        option = ''
+        try:
+            option = int(input('Wybierz opcję programu: '))
+        except:
+            print('Nieznana komenda. Wpisz cyfrę od 1 do 6.')
+        if option == 1:
+           option1()
+        elif option == 2:
+            option2()
+        elif option == 3:
+            option3()
+        elif option == 4:
+            option4()
+        elif option == 5:
+            print('Opuszczanie programu...')
+            exit()
+        elif option == 6:
+            print(list)
+        else:
+            print('Błąd. Wybierz opcję od 1 do 6.')
